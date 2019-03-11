@@ -31,8 +31,8 @@ set_property(TARGET pose_sensor PROPERTY COMPILE_DEFINITIONS POSE_MEAS)
 
 target_link_libraries(pose_sensor ${catkin_LIBRARIES})
 
-add_executable(position_sensor src/main.cpp src/position_sensor.cpp)
-set_property(TARGET position_sensor PROPERTY COMPILE_DEFINITIONS POSITION_MEAS)
+#add_executable(position_sensor src/main.cpp src/position_sensor.cpp)
+#set_property(TARGET position_sensor PROPERTY COMPILE_DEFINITIONS POSITION_MEAS)
 
-target_link_libraries(position_sensor ${catkin_LIBRARIES})
+#target_link_libraries(position_sensor ${catkin_LIBRARIES})
 

@@ -122,6 +122,8 @@ private:
    */
   bool data_playback_;
 
+  std::string frame_id_;
+
   enum
   {
     NO_UP, GOOD_UP, FUZZY_UP

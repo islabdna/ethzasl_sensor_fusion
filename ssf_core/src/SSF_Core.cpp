@@ -60,6 +60,7 @@ SSF_Core::SSF_Core()
   qvw_inittimer_ = 1;
 
   pnh.param("data_playback", data_playback_, false);
+  pnh.param<std::string>("frame_id", frame_id_, "/camera_link");
   reconfServer_ = new ReconfigureServer(ros::NodeHandle("~"));
   ReconfigureServer::CallbackType f = boost::bind(&SSF_Core::Config, this, _1, _2);
   reconfServer_->setCallback(f);
@@ -220,6 +221,7 @@ void SSF_Core::imuCallback(const sensor_msgs::ImuConstPtr & msg)
 
   predictionMade_ = true;
 
+  msgPose_.header.frame_id = frame_id_;
   msgPose_.header.stamp = msg->header.stamp;
   msgPose_.header.seq = msg->header.seq;
 
@@ -304,6 +306,7 @@ void SSF_Core::stateCallback(const sensor_fusion_comm::ExtEkfConstPtr & msg)
 
   predictionMade_ = true;
 
+  msgPose_.header.frame_id = frame_id_;
   msgPose_.header.stamp = msg->header.stamp;
   msgPose_.header.seq = msg->header.seq;
 
