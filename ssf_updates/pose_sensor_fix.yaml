@@ -15,7 +15,7 @@ meas_noise2: 0.07
 
 data_playback: True
 
-frame_id: "/odom"
+frame_id: "/pipe_link"
 
 # initialization of camera w.r.t. IMU
 init/q_ci/w: 1.0
